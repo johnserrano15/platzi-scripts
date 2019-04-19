@@ -41,15 +41,15 @@ pipeline {
         branch 'master'
       }
       steps {
-        build job: 'deploy-webapp-staging', parameters: [string(name: 'ARTIFACT_ID', value: "${env.ARTIFACT_ID}")], wait: false
+        build job: 'deploy-webapp-staging2', parameters: [string(name: 'ARTIFACT_ID', value: "${env.ARTIFACT_ID}")], wait: false
       }
     }
   }
   
-  post {
-    always {
-      deleteDir() /* clean up our workspace */
-    }
-  }
+  //post {
+    //always {
+      //deleteDir() /* clean up our workspace */
+    //}
+  //}
 }
 
